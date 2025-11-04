@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Hyperlink Copier",
+  "version": "1.0",
+  "description": "Copies selected text as a markdown hyperlink to the current URL.",
+  "permissions": ["scripting", "activeTab", "clipboardWrite"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "commands": {
+    "copy_hyperlink": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Copy selected text as a hyperlink"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
